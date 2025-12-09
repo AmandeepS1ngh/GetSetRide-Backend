@@ -1,8 +1,14 @@
 const express = require('express');
 const { protect } = require('../middleware/auth');
+const { getMe } = require('../controllers/authController');
 const User = require('../models/User');
 
 const router = express.Router();
+
+// @desc    Get user profile
+// @route   GET /api/users/profile
+// @access  Private
+router.get('/profile', protect, getMe);
 
 // @desc    Update user profile
 // @route   PUT /api/users/profile

@@ -13,8 +13,11 @@ const app = express();
 
 // Middleware
 app.use(cors({
-  // origin: process.env.FRONTEND_URL || 'http://localhost:5173',
-  origin: process.env.FRONTEND_URL || 'get-set-ride-react.vercel.app',
+  origin: [
+    'http://localhost:5173',
+    'https://get-set-ride-react.vercel.app',
+    process.env.FRONTEND_URL
+  ].filter(Boolean),
   credentials: true
 }));
 app.use(express.json());
