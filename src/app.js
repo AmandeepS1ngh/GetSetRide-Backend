@@ -9,6 +9,7 @@ const userRoutes = require('./routes/users');
 const carRoutes = require('./routes/cars');
 const bookingRoutes = require('./routes/bookings');
 const uploadRoutes = require('./routes/upload');
+const chatbotRoutes = require('./routes/chatbot');
 
 const app = express();
 
@@ -31,6 +32,7 @@ app.use('/api/users', userRoutes);
 app.use('/api/cars', carRoutes);
 app.use('/api/bookings', bookingRoutes);
 app.use('/api/upload', uploadRoutes);
+app.use('/api/chatbot', chatbotRoutes);
 
 // Health check
 app.get('/health', (req, res) => {
